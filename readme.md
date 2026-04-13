@@ -25,3 +25,12 @@ O **Pastel & Cana** é uma interface de autoatendimento (PWA) desenvolvida para 
 ├── database.js         # Banco de dados centralizado do catálogo
 └── style.css           # Estilização e animações premium
 ```
+
+
+## 📂 Proximos passos
+
+Quero adicionar os itens. 
+
+Ter um botão que vai exibir a listagem dos itens que selecionei podendo deletar da lista ou copiar a lista.
+
+Então tera um link para o whatsapp para colar e fazer o pedido
