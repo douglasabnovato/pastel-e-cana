@@ -3,62 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pastelzinho & Cana | Kiosk Premium</title>
+    <title>Pastel & Cana | Kiosk Premium</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header class="mequi-header">
-        <div class="header-content">
-            <div class="logo">🥟 <span>Pastelzinho</span> & Cana</div> 
-        </div>
-    </header>
-
-    <main class="kiosk-container">
-        <section class="hero-banner">
-    <div class="carousel-container">
-        <div id="hero-slider" class="slider-wrapper"></div>
-        
-        <div class="carousel-controls">
-            <button class="prev-btn">❮</button>
-            <button class="next-btn">❯</button>
-        </div>
+<header class="mequi-header">
+    <div class="header-content">
+        <div class="logo">🥟 <span>Pastel</span> & Cana</div> 
     </div>
-</section>
+</header>
 
+<main class="kiosk-container">
+    <section class="hero-banner">
+        <div class="carousel-container">
+            <div id="hero-slider" class="slider-wrapper"></div>
+            <div class="carousel-controls">
+                <button class="prev-btn">❮</button>
+                <button class="next-btn">❯</button>
+            </div>
+        </div>
+    </section>
 
-    <nav class="category-nav">
-        <div class="cat-item active" data-category="lancamentos">
-            <div class="cat-img-wrapper">
-                <img src="./assets/novo-badge.png" alt="Novidades">
-            </div>
-            <span class="cat-label">Lançamentos</span>
-        </div>
-        <div class="cat-item" data-category="tradicionais">
-            <div class="cat-img-wrapper">
-                <img src="./assets/icon-pastel.png" alt="Pastéis">
-            </div>
-            <span class="cat-label">Pastéis</span>
-        </div>
-        <div class="cat-item" data-category="bebidas">
-            <div class="cat-img-wrapper">
-                <img src="./assets/icon-cana.png" alt="Cana">
-            </div>
-            <span class="cat-label">Cana e Cia</span>
-        </div>
-    </nav>
+    <nav class="category-nav"></nav>
+
+    <div class="section-header">
+        <h2 id="section-title" class="section-title">Todos os Produtos</h2>
+        <span class="view-all" onclick="renderProdutos('todos')">Ver tudo ➔</span>
+    </div>
     
-        <div class="section-header">
-            <h2 class="section-title">Nossos Clássicos</h2>
-            <span class="view-all">Ver tudo ➔</span>
-        </div>
-        
-        <div id="product-grid" class="mequi-grid">
-            </div>
-    </main> 
+    <div id="product-grid" class="mequi-grid"></div>
+</main> 
 
- <script src="database.js"></script>
+    <script src="database.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
