@@ -93,24 +93,27 @@ body {
   padding: 0 20px 40px;
 }
 
-/* Banner Carrossel */
+/* ==========================================
+   /* 3. HERO BANNER - CARROSSEL PREMIUM
+   /* ========================================== */
+
 .hero-banner {
   width: 100%;
-  padding: 20px 0;
+  padding: 0; /* Remove preenchimento para visual total */
   overflow: hidden;
-  background: #f8f8f8;
+  background: #fdfdfd; /* Fundo extremamente limpo */
 }
 
 .carousel-container {
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
-  height: 400px; /* Ajustado para melhor proporção */
+  height: 480px; /* Altura imponente */
 }
 
 .slider-wrapper {
   display: flex;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); /* Transição suave e orgânica */
   height: 100%;
 }
 
@@ -118,62 +121,123 @@ body {
   min-width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 40px;
-  padding: 0 5%;
+  justify-content: space-between; /* Espaço total entre texto e imagem */
+  gap: 30px;
+  padding: 0 8%; /* Preenchimento confortável nas laterais */
+  box-sizing: border-box;
 }
 
-.slide-img {
-  max-height: 320px;
-  width: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.1));
+/* Informações do Slide */
+.slide-info {
+  flex: 1; /* Ocupa metade do espaço */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinhamento à esquerda */
+  z-index: 5;
 }
 
 .slide-info h1 {
-  font-size: clamp(2rem, 5vw, 3.5rem); /* Fonte responsiva */
+  font-size: clamp(2.5rem, 6vw, 4rem); /* Fonte gigante e responsiva */
   color: #222;
-  margin: 0 0 15px;
+  margin: 0 0 15px 0;
   line-height: 1.1;
+  font-weight: 800; /* Peso máximo para o nome */
 }
 
+/* Ingrediente Especial */
 .special-ingredient {
   display: inline-flex;
   align-items: center;
-  background: var(--mequi-yellow-dark);
+  gap: 10px;
+  background: #ffbc0d; /* Amarelo premium do ecossistema */
   color: #fff;
   padding: 10px 24px;
   border-radius: 50px;
   font-weight: 700;
   font-size: 1.1rem;
-  letter-spacing: -0.5px;
+  text-transform: uppercase;
+  margin-bottom: 25px; /* Espaço para o botão */
 }
 
+/* NOVO BOTÃO CTA DO BANNER */
+.btn-hero-order {
+  background: transparent;
+  border: 2px solid var(--mequi-yellow);
+  color: var(--text-dark);
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-hero-order:hover {
+  background: var(--mequi-yellow);
+  color: white;
+}
+
+.btn-hero-order .arrow {
+  transition: transform 0.2s;
+}
+
+.btn-hero-order:hover .arrow {
+  transform: translateX(5px);
+}
+
+/* Imagem do Produto Flutuante */
+.slide-img {
+  flex: 1; /* Ocupa a outra metade */
+  max-height: 380px; /* Maior e mais imponente */
+  width: auto;
+  object-fit: contain;
+
+  /* A Mágica: Sombra no FORMATO do produto, não quadrada */
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.15));
+
+  transition: transform 0.3s ease; /* Efeito ao hover do slide inteiro */
+}
+
+/* Efeito ao passar o mouse no slide inteiro (UX) */
+.slide:hover .slide-img {
+  transform: translateY(-10px) rotate(-2deg);
+}
+
+/* Controles de Navegação Otimizados */
 .carousel-controls button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: white;
+  background: rgba(255, 255, 255, 0.9);
   border: none;
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   cursor: pointer;
+  font-size: 1.5rem;
   z-index: 10;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: 0.2s;
+  transition: all 0.2s;
+  opacity: 0.6; /* Esconde um pouco para não atrapalhar */
 }
 
 .carousel-controls button:hover {
+  opacity: 1;
   background: var(--mequi-yellow);
   color: white;
 }
+
 .prev-btn {
-  left: 10px;
+  left: 15px;
 }
 .next-btn {
-  right: 10px;
+  right: 15px;
 }
+
+/* THE END - BANNER CARROSSEL PREMIUM */
 
 /* Grid e Cards */
 .mequi-grid {

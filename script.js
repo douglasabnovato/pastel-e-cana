@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // --- CARROSSEL HERO ---
 const renderHero = () => {
   const slider = document.getElementById("hero-slider");
-  if (!slider) return;
+  if (!slider || !DATA.heroDestaques) return;
 
   slider.innerHTML = DATA.heroDestaques
     .map(
@@ -34,9 +34,15 @@ const renderHero = () => {
         <div class="slide">
             <div class="slide-info">
                 <h1>${p.nome}</h1>
-                <div class="special-ingredient">✨ ${p.ingrediente}</div>
+                <div class="special-ingredient">
+                    <span class="icon">✨</span>
+                    <span class="text">${p.ingrediente}</span>
+                </div>
+                <button class="btn-hero-order" onclick="adicionarAoCarrinho(${p.id})">
+                    Adicionar ao Pedido <span class="arrow">➔</span>
+                </button>
             </div>
-            <img src="${p.img}" class="slide-img" onerror="this.src='https://via.placeholder.com/400x300?text=Produto'">
+            <img src="${p.img}" class="slide-img" alt="${p.nome}" onerror="this.src='./assets/placeholder-pura.png'">
         </div>
     `,
     )
